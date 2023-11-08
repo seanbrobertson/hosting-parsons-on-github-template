@@ -7,6 +7,43 @@ title: Why is this not working?
 ---
 # Parsons Practice
 
+## This is a test
+<div id="Test 1-sortableTrash" class="sortable-code"></div> 
+<div id="Test 1-sortable" class="sortable-code"></div> 
+<div style="clear:both;"></div> 
+<p> 
+    <input id="Test 1-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="Test 1-newInstanceLink" value="Reset Problem" type="button" /> 
+</p> 
+<script type="text/javascript"> 
+(function(){
+  var initial = "&quot;Can you believe this&quot;\n" +
+    "12332\n" +
+    "234234";
+  var parsonsPuzzle = new ParsonsWidget({
+    "sortableId": "Test 1-sortable",
+    "max_wrong_lines": 10,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
+    "exec_limit": 2500,
+    "can_indent": true,
+    "x_indent": 50,
+    "lang": "en",
+    "show_feedback": true,
+    "trashId": "Test 1-sortableTrash"
+  });
+  parsonsPuzzle.init(initial);
+  parsonsPuzzle.shuffleLines();
+  $("#Test 1-newInstanceLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.shuffleLines(); 
+  }); 
+  $("#Test 1-feedbackLink").click(function(event){ 
+      event.preventDefault(); 
+      parsonsPuzzle.getFeedback(); 
+  }); 
+})(); 
+</script>
+
 ## Parsons 1 (Line Based Grader)
 Re-arrange the blocks below so they print out "Hello World!"
 
