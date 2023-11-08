@@ -5,6 +5,7 @@
 layout: default
 title: This is a test
 ---
+# This is a test
 <div id="Test 1-sortableTrash" class="sortable-code"></div> 
 <div id="Test 1-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
